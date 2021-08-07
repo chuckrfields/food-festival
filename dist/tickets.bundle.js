@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("function createEl(htmlString, attrs, ...children) {\r\n    if (typeof htmlString !== \"string\") {\r\n      throw Error(\"Argument 'htmlString' is required and must be a string\");\r\n    }\r\n  \r\n    const el = document.createElement(htmlString);\r\n  \r\n    if (typeof attrs === \"object\") {\r\n      for (let key in attrs) {\r\n        if (key.substring(0, 2) === \"on\") {\r\n          el.addEventListener(key.substring(2).toLowerCase(), attrs[key]);\r\n        } else {\r\n          el.setAttribute(key, attrs[key]);\r\n        }\r\n      }\r\n    }\r\n  \r\n    children.forEach(function(child) {\r\n      let node;\r\n  \r\n      if (child.constructor.name.includes(\"Element\")) {\r\n        node = child;\r\n      } else {\r\n        node = document.createTextNode(child);\r\n      }\r\n  \r\n      el.appendChild(node);\r\n    });\r\n  \r\n    return el;\r\n  }\r\n\r\n  module.exports = createEl;\n\n//# sourceURL=webpack:///./assets/js/domMethods.js?");
+eval("function createEl(htmlString, attrs, ...children) {\n    if (typeof htmlString !== \"string\") {\n      throw Error(\"Argument 'htmlString' is required and must be a string\");\n    }\n  \n    const el = document.createElement(htmlString);\n  \n    if (typeof attrs === \"object\") {\n      for (let key in attrs) {\n        if (key.substring(0, 2) === \"on\") {\n          el.addEventListener(key.substring(2).toLowerCase(), attrs[key]);\n        } else {\n          el.setAttribute(key, attrs[key]);\n        }\n      }\n    }\n  \n    children.forEach(function(child) {\n      let node;\n  \n      if (child.constructor.name.includes(\"Element\")) {\n        node = child;\n      } else {\n        node = document.createTextNode(child);\n      }\n  \n      el.appendChild(node);\n    });\n  \n    return el;\n  }\n\n  module.exports = createEl;\n\n//# sourceURL=webpack:///./assets/js/domMethods.js?");
 
 /***/ }),
 
@@ -104,7 +104,7 @@ eval("function createEl(htmlString, attrs, ...children) {\r\n    if (typeof html
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("/* WEBPACK VAR INJECTION */(function($) {__webpack_require__(/*! bootstrap */ \"./node_modules/bootstrap/dist/js/bootstrap.js\");\r\nconst createEl = __webpack_require__(/*! ./domMethods */ \"./assets/js/domMethods.js\");\r\n\r\n$(document).ready( function() {\r\n    // DOM manipulation code specific to each page.\r\n    })\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\")))\n\n//# sourceURL=webpack:///./assets/js/tickets.js?");
+eval("/* WEBPACK VAR INJECTION */(function($) {__webpack_require__(/*! bootstrap */ \"./node_modules/bootstrap/dist/js/bootstrap.js\");\nconst createEl = __webpack_require__(/*! ./domMethods */ \"./assets/js/domMethods.js\");\n\n$(document).ready( function() {\n    // DOM manipulation code specific to each page.\n    })\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\")))\n\n//# sourceURL=webpack:///./assets/js/tickets.js?");
 
 /***/ }),
 
